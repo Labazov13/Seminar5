@@ -25,18 +25,27 @@ void ProverkaChisla(int[] arr)
 {
     System.Console.Write("Введите искомое число: ");
     int chislo = int.Parse(Console.ReadLine()!);
+    int a = 0;
     for (int i = 0; i < arr.Length; i++)
     {
         if (arr[i] == chislo)
         {
-            System.Console.WriteLine("Число присутствует в массиве!");
-            break;
+            a = chislo;
+            //System.Console.WriteLine("Число присутствует в массиве!");
+            //break;
         }
-        else
+        /*else
         {
-            System.Console.WriteLine("Числа нет в массиве.");
-        }
-
+            System.Console.WriteLine("Числа нет в массиве, ищем дальше...");
+        }*/
+    }
+    if (a == 0)
+    {
+        System.Console.WriteLine("Числа нет");
+    }
+    else
+    {
+        System.Console.WriteLine("Число найдено!");
     }
 }
 int[] array = GetArray(0, 15, 15);

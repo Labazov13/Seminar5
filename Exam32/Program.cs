@@ -19,19 +19,14 @@ int[] GetArray(int min, int max, int size)
 
 void reverseArray(int[] arr)
 {
-    /*foreach (int element in arr)
+    int i=0;
+    foreach (int element in arr)
     {
-        if (element < 0)
-        {
-            arr[element] = element * (-1);
-        }
-        else
-        {
-            arr[element] = element * (-1);
-        }
-    }*/
+            arr[i] = -element;
+            i++;
+    }
 
-    for (int i = 0; i < arr.Length; i++)
+    /*for (int i = 0; i < arr.Length; i++)
     {
         if (arr[i] < 0)
         {
@@ -41,7 +36,7 @@ void reverseArray(int[] arr)
         {
             arr[i] = arr[i] * (-1);
         }
-    }
+    }*/
 }
 
 void PrintArray(int[] arr)
