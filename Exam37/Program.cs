@@ -21,24 +21,38 @@ void PrintArray(int[] arr)
 }
 
 
-void Multiple(int[] arr)    //5,2,6,3
+void Multiple(int[] arr)    //5,2,6,3,9
 {
-    for (int i = 0; i < arr.Length; i++)
+    if (arr.Length % 2 == 0)
     {
-        if (arr[(arr.Length/2)] ==arr[i] )
+        int[] result = new int[arr.Length / 2];
+        for (int i = 0; i < arr.Length / 2; i++)
         {
-            System.Console.WriteLine(arr[i]);
-            break;
+            result[i] = arr[i] * arr[arr.Length - i - 1];
+            System.Console.Write(" " + result[i] + " ");
         }
-        int result = arr[i] * arr[arr.Length - i - 1];
-        System.Console.Write(" " + result + " ");
-        
-
     }
+    else                                                
+    {
+        int[] result = new int[arr.Length / 2 + 1];     
+        for (int i = 0; i < result.Length; i++)
+        {
+            if (i == arr.Length / 2 )       
+            {
+                result[i] = arr[i];
+                System.Console.Write(result[i]);
+                break;
+            }
+            else
+            {
+                result[i]=arr[i]*arr[arr.Length-1-i];  
+            }
+            System.Console.Write($"{result[i]} ");     
+        }
+    }
+
 }
-
-
-int[] array = GetArray(1, 8, 5);
+int[] array = GetArray(1, 8, 4);
 PrintArray(array);
 System.Console.WriteLine();
 Multiple(array);
